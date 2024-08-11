@@ -1,8 +1,11 @@
 package programs.algorithms.recursion;
 
 class FibonacciRecursion{
+
+    static int count = 0;
     public static void main(String[] args) {
-        System.out.println(fibonacci(5));
+        System.out.println(fibonacci(10));
+        System.out.println("recursion count "+count);
 
     }
 
@@ -11,6 +14,7 @@ class FibonacciRecursion{
         //base condition
         if(n == 0 || n == 1)
             return n;
+        count++;
 
         //recursive calls
         System.out.println("calling fibonacci for number "+ n);

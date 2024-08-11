@@ -5,11 +5,12 @@ import java.util.Map;
 
 class FibonacciMemoization {
 
-    static private Map<Integer, Integer > memoizeTable = new HashMap<>();
+    static private final Map<Integer, Integer > memoizeTable = new HashMap<>();
+    static int count = 0;
 
     public static void main(String[] args) {
-        System.out.println(fibonacci(5));
-
+        System.out.println(fibonacci(10));
+        System.out.println("recursion count "+count);
     }
 
     public static int fibonacci(int n){
@@ -22,7 +23,7 @@ class FibonacciMemoization {
             // getting value from the stored result(s)
             return memoizeTable.get(n);
         }
-
+        count++;
         //recursive calls
         System.out.println("calling fibonacci for number "+ n);
         int result =  fibonacci(n-1) + fibonacci(n-2);
